@@ -340,3 +340,33 @@
   body{padding-bottom:66px}
   .toast{bottom:80px}
 }
+
+/* ---------- Tablette/desktop : footer adaptatif ---------- */
+@media (max-width:980px){
+  .footer-grid{grid-template-columns:1fr 1fr;gap:1.8rem}
+}
+
+/* ---------- Téléphone : recherche en pleine largeur ---------- */
+@media (max-width:560px){
+  :root{--header-h:122px}
+  .header-main{height:auto;flex-wrap:wrap;row-gap:8px;padding:.55rem 0}
+  .header-search{order:99;flex-basis:100%;max-width:none;margin:0 0 2px}
+  .hero{min-height:400px}
+}
+
+/* ---------- Très petit écran ---------- */
+@media (max-width:480px){
+  .container{padding-left:16px;padding-right:16px}
+  .topbar-inner{min-height:30px;font-size:.74rem}
+  .topbar-contact{display:none}
+  .footer-grid{grid-template-columns:1fr;gap:1.5rem}
+  .footer-contact li{font-size:.86rem}
+  .hero{min-height:360px}
+  .hero-content{padding:3.4rem 0}
+  .hero-content h1{font-size:1.9rem}
+  .hero-dots{left:16px;bottom:14px}
+  .section{padding:2.1rem 0}
+  .section-head{margin-bottom:1.1rem}
+  .cta-band{padding:1.6rem 1.3rem}
+  .bottom-nav{padding:4px 6px calc(4px + env(safe-area-inset-bottom))}
+}

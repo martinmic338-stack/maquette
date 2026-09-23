@@ -144,10 +144,10 @@ window.JMARK = (function () {
 
   /* ---------- Nos magasins ---------- */
   var STORES = [
-    { name: 'JMARK Centre-ville', zone: 'Gombe', address: 'Avenue du Commerce n° 45, Kinshasa', hours: 'Lun – Sam : 8h00 – 21h00', phone: '+243 81 000 00 01', icon: '🏬' },
-    { name: 'JMARK Marché Central', zone: 'Kalamu', address: 'Boulevard du 30 Juin, Kinshasa', hours: 'Lun – Dim : 7h30 – 22h00', phone: '+243 81 000 00 02', icon: '🏪' },
-    { name: 'JMARK Rond-point', zone: 'Ngaliema', address: 'Avenue des Poids Lourds, Kinshasa', hours: 'Lun – Sam : 8h00 – 20h30', phone: '+243 81 000 00 03', icon: '🏬' },
-    { name: 'JMARK Campus', zone: 'Lemba', address: 'Centre universitaire, Kinshasa', hours: 'Lun – Dim : 9h00 – 20h00', phone: '+243 81 000 00 04', icon: '🏫' }
+    { name: 'JMARK Centre-ville', zone: 'Bulengera', address: 'Avenue de la Réunion n° 45, Ville de Butembo', hours: 'Lun – Sam : 8h00 – 21h00', phone: '+243 81 000 00 01', icon: '🏬' },
+    { name: 'JMARK Marché Central', zone: 'Kikyo', address: 'Route de l’Hippodrome n° 78, Ville de Butembo', hours: 'Lun – Dim : 7h30 – 22h00', phone: '+243 81 000 00 02', icon: '🏪' },
+    { name: 'JMARK Mususa', zone: 'Mususa', address: 'Avenue des Commerçants, Ville de Butembo', hours: 'Lun – Sam : 8h00 – 20h30', phone: '+243 81 000 00 03', icon: '🏬' },
+    { name: 'JMARK Campus UCB', zone: 'Vuhira', address: 'Boulevard du Graben, Ville de Butembo', hours: 'Lun – Dim : 9h00 – 20h00', phone: '+243 81 000 00 04', icon: '🏫' }
   ];
 
   /* ---------- Contact ---------- */
@@ -155,7 +155,7 @@ window.JMARK = (function () {
     phone: '+243 81 000 00 00',
     whatsapp: '+243 81 000 00 00',
     email: 'contact@jmark.cd',
-    address: 'Avenue du Commerce n° 45, Gombe, Kinshasa',
+    address: 'Avenue de la Réunion n° 45, Ville de Butembo, Nord-Kivu',
     hours: 'Lun – Dim : 8h00 – 21h00'
   };
 

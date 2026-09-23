@@ -97,3 +97,27 @@
   .price-now{font-size:1.05rem}
   .btn-card-add{font-size:.82rem}
 }
+
+/* ---------- Finitions mobile ---------- */
+@media (max-width:640px){
+  input,select,textarea{font-size:16px}
+}
+@media (max-width:560px){
+  .breadcrumbs{padding:.9rem 0 0;font-size:.78rem}
+  .steps{padding:1.1rem 0 .2rem}
+  .shop-toolbar{gap:.55rem}
+  .results-bar{margin:.8rem 0 .9rem}
+  .pd-addrow .btn{flex:1}
+  .pd-addrow .qty{width:100%;justify-content:space-between}
+  .pd-addrow .qty button{width:54px}
+  .pd-trust{gap:.6rem}
+}
+@media (max-width:480px){
+  .checkout-form{padding:1.15rem 1rem}
+  .auth-card{padding:1.4rem 1.1rem}
+  .empty-state{padding:2.4rem 1rem}
+  .confirm-hero{padding:2.1rem 1.1rem 1.8rem}
+  .confirm-body{gap:1rem}
+  .page-intro{padding:1.5rem 0 .3rem}
+  .card-pad{padding:1.1rem 1.1rem}
+}

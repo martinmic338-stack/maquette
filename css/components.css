@@ -290,4 +290,16 @@
   .cart-item-total{margin-left:0;width:100%}
   .features{grid-template-columns:1fr 1fr;gap:.8rem}
   .hero{min-height:400px}
+  .drawer-remove{width:36px;height:36px}
+}
+@media (max-width:480px){
+  .category-grid{grid-template-columns:repeat(2,1fr)}
+  .features{grid-template-columns:1fr}
+  .product-grid{gap:.6rem}
+  .product-card-body{padding:.65rem .7rem .8rem}
+  .cart-item{padding:.8rem;gap:.75rem}
+  .cart-item-thumb{width:76px;height:76px}
+  .store-card{padding:1.05rem}
+  .pay-options{gap:.6rem}
+  .checkout-layout,.payment-layout{gap:1.2rem}
 }
