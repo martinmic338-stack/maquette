@@ -1,9 +1,9 @@
 /* ============================================
-   JMARK SUPER MARCHÉ — Données du prototype
+   JMART SUPER MARCHÉ — Données du prototype
    (fichier local — aucun backend)
    ============================================ */
 
-window.JMARK = (function () {
+window.JMART = (function () {
   'use strict';
 
   var SHIPPING = 2000;                 // frais de livraison (FC)
@@ -144,17 +144,17 @@ window.JMARK = (function () {
 
   /* ---------- Nos magasins ---------- */
   var STORES = [
-    { name: 'JMARK Centre-ville', zone: 'Bulengera', address: 'Avenue de la Réunion n° 45, Ville de Butembo', hours: 'Lun – Sam : 8h00 – 21h00', phone: '+243 81 000 00 01', icon: '🏬' },
-    { name: 'JMARK Marché Central', zone: 'Kikyo', address: 'Route de l’Hippodrome n° 78, Ville de Butembo', hours: 'Lun – Dim : 7h30 – 22h00', phone: '+243 81 000 00 02', icon: '🏪' },
-    { name: 'JMARK Mususa', zone: 'Mususa', address: 'Avenue des Commerçants, Ville de Butembo', hours: 'Lun – Sam : 8h00 – 20h30', phone: '+243 81 000 00 03', icon: '🏬' },
-    { name: 'JMARK Campus UCB', zone: 'Vuhira', address: 'Boulevard du Graben, Ville de Butembo', hours: 'Lun – Dim : 9h00 – 20h00', phone: '+243 81 000 00 04', icon: '🏫' }
+    { name: 'JMART Centre-ville', zone: 'Bulengera', address: 'Avenue de la Réunion n° 45, Ville de Butembo', hours: 'Lun – Sam : 8h00 – 21h00', phone: '+243 81 000 00 01', icon: '🏬' },
+    { name: 'JMART Marché Central', zone: 'Kikyo', address: 'Route de l’Hippodrome n° 78, Ville de Butembo', hours: 'Lun – Dim : 7h30 – 22h00', phone: '+243 81 000 00 02', icon: '🏪' },
+    { name: 'JMART Mususa', zone: 'Mususa', address: 'Avenue des Commerçants, Ville de Butembo', hours: 'Lun – Sam : 8h00 – 20h30', phone: '+243 81 000 00 03', icon: '🏬' },
+    { name: 'JMART Campus UCB', zone: 'Vuhira', address: 'Boulevard du Graben, Ville de Butembo', hours: 'Lun – Dim : 9h00 – 20h00', phone: '+243 81 000 00 04', icon: '🏫' }
   ];
 
   /* ---------- Contact ---------- */
   var CONTACT = {
     phone: '+243 81 000 00 00',
     whatsapp: '+243 81 000 00 00',
-    email: 'contact@jmark.cd',
+    email: 'contact@jmart.cd',
     address: 'Avenue de la Réunion n° 45, Ville de Butembo, Nord-Kivu',
     hours: 'Lun – Dim : 8h00 – 21h00'
   };

@@ -1,15 +1,15 @@
 /* ============================================
-   JMARK — Logique des pages
+   JMART — Logique des pages
    ============================================ */
 
 (function () {
   'use strict';
 
-  var C = window.JMARKCart;
-  var D = window.JMARK;
+  var C = window.JMARTCart;
+  var D = window.JMART;
 
-  var CUST_KEY = 'jmark_customer';
-  var ORDER_KEY = 'jmark_last_order';
+  var CUST_KEY = 'jmart_customer';
+  var ORDER_KEY = 'jmart_last_order';
 
   /* ---------- Helpers ---------- */
   function $(sel, root) { return (root || document).querySelector(sel); }
@@ -576,7 +576,7 @@
       total: sub + ship,
       payment: { id: method.id, label: method.label },
       customer: {
-        fullName: customer.fullName || 'Client JMARK',
+        fullName: customer.fullName || 'Client JMART',
         phone: customer.phone || '+243 XXX XXX XXX',
         address: customer.address || '—',
         city: customer.city || '—',
