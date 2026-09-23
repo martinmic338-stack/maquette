@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JMARK — Détail produit</title>
+<meta name="description" content="Fiche détaillée du produit : image, prix, disponibilité et ajout au panier.">
+<link rel="icon" href="assets/logo/logo.png">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/pages.css">
+</head>
+<body data-page="product">
+
+<!-- Barre promo -->
+<div class="topbar">
+  <div class="container topbar-inner">
+    <span>🚚 Livraison rapide en ville — dès 2 000 FC, offerte dès 100 000 FC</span>
+    <span class="topbar-contact">📞 +243 81 000 00 00 <span class="sep">•</span> Lun – Dim : 8h00 – 21h00</span>
+  </div>
+</div>
+
+<!-- En-tête -->
+<header class="site-header">
+  <div class="container header-main">
+    <button class="menu-btn" id="menuBtn" type="button" aria-label="Ouvrir le menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+    </button>
+    <a class="brand" href="index.html">
+      <img src="assets/logo/logo.png" alt="JMARK">
+      <span class="brand-text"><strong>JMARK</strong><small>SUPER MARCHÉ</small></span>
+    </a>
+    <form class="header-search" data-header-search role="search" action="products.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+      <input type="search" name="q" placeholder="Rechercher un produit, une marque..." aria-label="Rechercher un produit">
+      <button type="submit" aria-label="Lancer la recherche">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+      </button>
+    </form>
+    <div class="header-actions">
+      <a class="header-link" href="account.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+        <span>Compte</span>
+      </a>
+      <button class="cart-btn" id="cartOpen" type="button" aria-label="Ouvrir le panier">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+        <b class="cart-count" data-cart-count>0</b>
+      </button>
+    </div>
+  </div>
+  <div class="header-nav">
+    <div class="container header-nav-inner">
+      <div class="cat-wrap">
+        <button class="cat-btn" id="catBtn" type="button" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+          <span>Toutes les catégories</span>
+        </button>
+        <div class="cat-menu" id="catMenu" aria-hidden="true">
+          <div class="cat-menu-title">Parcourir les catégories</div>
+          <div class="cat-menu-list" id="catMenuList"></div>
+          <a class="cat-menu-all" href="products.html">Voir tout le catalogue</a>
+        </div>
+      </div>
+      <nav class="main-nav" id="mainNav" aria-label="Navigation principale">
+        <div class="main-nav-links">
+          <a class="nav-link is-active" data-nav="home" href="index.html">Accueil</a>
+          <a class="nav-link" data-nav="promotions" href="promotions.html">Promotions</a>
+          <a class="nav-link" href="products.html?cat=nouveautes">Nouveautés</a>
+          <a class="nav-link" data-nav="stores" href="stores.html">Nos magasins</a>
+          <a class="nav-link" data-nav="contact" href="contact.html">Contact</a>
+        </div>
+        <div class="main-nav-cats">
+          <div class="mob-cats-title">Toutes les catégories</div>
+          <div class="mob-cats" id="mobCats"></div>
+        </div>
+      </nav>
+      <div class="header-chip">🔥 Promotions jusqu'à −20%</div>
+    </div>
+  </div>
+</header>
+
+<!-- Drawer panier -->
+<div class="drawer-overlay" id="drawerOverlay" data-drawer-close></div>
+<aside class="cart-drawer" id="cartDrawer" aria-hidden="true" aria-label="Panier">
+  <div class="drawer-head">
+    <h3>Mon panier <span id="drawerHeadCount"></span></h3>
+    <button class="drawer-close" type="button" data-drawer-close aria-label="Fermer le panier">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+    </button>
+  </div>
+  <div class="drawer-items" id="drawerItems"></div>
+  <div class="drawer-empty" id="drawerEmpty">
+    <div class="de-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+    </div>
+    <h3>Votre panier est vide</h3>
+    <p>Parcourez nos rayons et ajoutez vos produits préférés.</p>
+    <a class="btn btn-primary" href="products.html">Découvrir les produits</a>
+  </div>
+  <div class="drawer-foot" id="drawerFoot">
+    <div class="drawer-sub-row"><span>Sous-total</span><span id="drawerSub">0 FC</span></div>
+    <div class="drawer-grand"><span>TOTAL</span><span id="drawerTotal">0 FC</span></div>
+    <a class="btn btn-outline btn-block" href="cart.html">Voir le panier</a>
+    <a class="btn btn-primary btn-block" href="checkout.html">Commander</a>
+    <div class="drawer-free">🚚 Livraison offerte dès 100 000 FC</div>
+  </div>
+</aside>
+
+<!-- Contenu principal -->
+<main>
+<div class="container"><div class="breadcrumbs"><a href="index.html">Accueil</a> <span class="sep">›</span> <a href="products.html">Produits</a> <span class="sep">›</span> <span class="current" id="pdBread"></span></div></div>
+<section class="section" style="padding-top:1.2rem">
+  <div class="container">
+    <div class="pd-layout">
+      <div class="pd-media" id="pdMedia"></div>
+      <div class="pd-info">
+        <span class="pd-cat" id="pdCat"></span>
+        <h1 id="pdName"></h1>
+        <div class="pd-price-row">
+          <span class="pd-price-now" id="pdPrice"></span>
+          <span class="pd-price-old" id="pdOld"></span>
+        </div>
+        <div class="pd-unit" id="pdUnit"></div>
+        <p class="pd-desc" id="pdDesc"></p>
+        <div class="pd-stockrow" id="pdStock"></div>
+        <div class="pd-addrow">
+          <div class="qty">
+            <button type="button" id="pdMinus" aria-label="Diminuer la quantité">&minus;</button>
+            <input type="text" inputmode="numeric" value="1" id="pdQty" aria-label="Quantité">
+            <button type="button" id="pdPlus" aria-label="Augmenter la quantité">+</button>
+          </div>
+          <button class="btn btn-primary btn-lg pd-buy" type="button" id="pdAdd">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+            Ajouter au panier
+          </button>
+        </div>
+        <div class="pd-trust">
+          <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 3h15v13H1z"></path><path d="M16 8h4l3 3v5h-7V8z"></path><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg> Livraison rapide en ville</div>
+          <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg> Paiement Mobile Money sécurisé</div>
+          <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg> Produits frais du jour</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section" style="padding-top:0">
+  <div class="container">
+    <div class="section-head"><h2 class="section-title"><span class="st-emoji">🛒</span> Vous aimerez aussi</h2></div>
+    <div class="product-grid" id="relatedGrid"></div>
+  </div>
+</section>
+</main>
+
+<!-- Pied de page -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <img src="assets/logo/logo.png" alt="JMARK">
+          <span><strong>JMARK</strong><small>SUPER MARCHÉ</small></span>
+        </div>
+        <p class="footer-desc">Votre supermarché, désormais en ligne. Produits frais, épicerie et plus encore, livrés chez vous.</p>
+        <div class="socials">
+          <a href="#" data-notify="Nos réseaux sociaux arrivent bientôt." aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
+          <a href="#" data-notify="Nos réseaux sociaux arrivent bientôt." aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+          <a href="#" data-notify="Nos réseaux sociaux arrivent bientôt." aria-label="TikTok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg></a>
+          <a href="#" data-notify="Nos réseaux sociaux arrivent bientôt." aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="products.html">Produits</a></li>
+          <li><a href="promotions.html">Promotions</a></li>
+          <li><a href="stores.html">Nos magasins</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Catégories</h4>
+        <ul>
+          <li><a href="products.html?category=Fruits%20%26%20L%C3%A9gumes">Fruits &amp; Légumes</a></li>
+          <li><a href="products.html?category=%C3%89picerie">Épicerie</a></li>
+          <li><a href="products.html?category=Boissons">Boissons</a></li>
+          <li><a href="products.html?category=Produits%20frais">Produits frais</a></li>
+          <li><a href="products.html?category=Hygi%C3%A8ne%20%26%20Beaut%C3%A9">Hygiène &amp; Beauté</a></li>
+          <li><a href="products.html?category=Maison">Maison</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Service client</h4>
+        <ul class="footer-contact">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg><a class="fc-hl" href="tel:+243810000000">+243 81 000 00 00</a></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg><a class="fc-hl" href="https://wa.me/243810000000">WhatsApp</a></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg><a class="fc-hl" href="mailto:contact@jmark.cd">contact@jmark.cd</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="pay-chips">
+        <span class="pay-chip">M-Pesa</span>
+        <span class="pay-chip">Airtel Money</span>
+        <span class="pay-chip">Orange Money</span>
+        <span class="pay-chip">Visa</span>
+        <span class="pay-chip">Mastercard</span>
+        <span class="pay-chip">Espèces à la livraison</span>
+      </div>
+      <div class="footer-copy">© 2026 JMARK Super Marché — Prototype de démonstration. Prix en francs congolais (FC).</div>
+    </div>
+  </div>
+</footer>
+
+<!-- Navigation basse mobile -->
+<nav class="bottom-nav" aria-label="Navigation mobile">
+  <a class="bn-item is-active" data-bn="home" href="index.html">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+    <span>Accueil</span>
+  </a>
+  <button class="bn-item" id="bottomSearch" type="button">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+    <span>Rechercher</span>
+  </button>
+  <button class="bn-item" id="bottomCart" type="button" aria-label="Ouvrir le panier">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+    <span>Panier</span>
+    <b class="bn-count is-hidden" data-cart-count>0</b>
+  </button>
+  <a class="bn-item" data-bn="account" href="account.html">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+    <span>Compte</span>
+  </a>
+</nav>
+
+<script src="js/data.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

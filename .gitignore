@@ -1,0 +1,13 @@
+# Fichiers temporaires Office / Word lock files
+~$*
+*.docx~
+*.tmp
+
+# Fichiers OS
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Éditeurs
+.vscode/
+.idea/

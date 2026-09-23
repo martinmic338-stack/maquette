@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="620" viewBox="0 0 1600 620">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#11a24b"/>
+      <stop offset="1" stop-color="#0b7c39"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="620" fill="url(#g)"/>
+
+  <circle cx="180" cy="110" r="190" fill="#ffffff" fill-opacity="0.08"/>
+  <circle cx="1450" cy="520" r="260" fill="#ffffff" fill-opacity="0.07"/>
+  <text x="1200" y="330" font-size="250" text-anchor="middle" dominant-baseline="central" font-family="'Segoe UI Emoji','Apple Color Emoji','Noto Color Emoji','Twemoji Mozilla',sans-serif">🥬</text>
+  <text x="350" y="130" font-size="105" font-family="'Segoe UI Emoji','Apple Color Emoji','Noto Color Emoji','Twemoji Mozilla',sans-serif">🥭</text>
+  <text x="820" y="120" font-size="95" font-family="'Segoe UI Emoji','Apple Color Emoji','Noto Color Emoji','Twemoji Mozilla',sans-serif">🥦</text>
+  <text x="140" y="510" font-size="85" font-family="'Segoe UI Emoji','Apple Color Emoji','Noto Color Emoji','Twemoji Mozilla',sans-serif">🍎</text>
+</svg>

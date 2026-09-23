@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="480" viewBox="0 0 480 480">
+
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#e2f6f1"/>
+      <stop offset="1" stop-color="#bcebdd"/>
+    </linearGradient>
+    <radialGradient id="h" cx="0.5" cy="0.4" r="0.62">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.65"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="480" height="480" fill="url(#g)"/>
+  <circle cx="240" cy="238" r="180" fill="url(#h)"/>
+  <circle cx="240" cy="244" r="168" fill="#ffffff" fill-opacity="0.3"/>
+  <text x="240" y="272" font-size="190" text-anchor="middle" dominant-baseline="central" font-family="'Segoe UI Emoji','Apple Color Emoji','Noto Color Emoji','Twemoji Mozilla',sans-serif">🥤</text>
+</svg>
