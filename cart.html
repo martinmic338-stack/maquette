@@ -6,7 +6,7 @@
 <meta name="theme-color" content="#e01e33">
 <title>JMART — Votre panier</title>
 <meta name="description" content="Consultez votre panier JMART, modifiez les quantités et passez commande.">
-<link rel="icon" href="assets/logo/logo.svg">
+<link rel="icon" href="assets/logo/logo.png">
 <link rel="stylesheet" href="css/base.css">
 <link rel="stylesheet" href="css/layout.css">
 <link rel="stylesheet" href="css/components.css">
@@ -29,26 +29,15 @@
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
     </button>
     <a class="brand" href="index.html">
-      <img src="assets/logo/logo.svg" alt="JMART">
-      <span class="brand-text"><strong>JMART</strong><small>SUPER MARCHÉ</small></span>
+      <img src="assets/logo/logo.png" alt="JMART">
     </a>
-    <form class="header-search" data-header-search role="search" action="products.html">
+    <form class="header-search m-search" data-header-search role="search" action="products.html">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
       <input type="search" name="q" placeholder="Rechercher un produit, une marque..." aria-label="Rechercher un produit">
       <button type="submit" aria-label="Lancer la recherche">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
       </button>
     </form>
-    <div class="header-actions">
-      <a class="header-link" href="account.html">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-        <span>Compte</span>
-      </a>
-      <button class="cart-btn" id="cartOpen" type="button" aria-label="Ouvrir le panier">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
-        <b class="cart-count" data-cart-count>0</b>
-      </button>
-    </div>
   </div>
   <div class="header-nav">
     <div class="container header-nav-inner">
@@ -63,6 +52,13 @@
           <a class="cat-menu-all" href="products.html">Voir tout le catalogue</a>
         </div>
       </div>
+      <form class="header-search d-search" data-header-search role="search" action="products.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input type="search" name="q" placeholder="Rechercher un produit, une marque..." aria-label="Rechercher un produit">
+        <button type="submit" aria-label="Lancer la recherche">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        </button>
+      </form>
       <nav class="main-nav" id="mainNav" aria-label="Navigation principale">
         <div class="main-nav-links">
           <a class="nav-link is-active" data-nav="home" href="index.html">Accueil</a>
@@ -150,7 +146,7 @@
     <div class="footer-grid">
       <div>
         <div class="footer-brand">
-          <img src="assets/logo/logo.svg" alt="JMART">
+          <img src="assets/logo/logo.png" alt="JMART">
           <span><strong>JMART</strong><small>SUPER MARCHÉ</small></span>
         </div>
         <p class="footer-desc">Votre supermarché, désormais en ligne. Produits frais, épicerie et plus encore, livrés chez vous.</p>
